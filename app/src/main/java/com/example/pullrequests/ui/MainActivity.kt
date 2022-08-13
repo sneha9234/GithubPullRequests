@@ -71,6 +71,7 @@ class MainActivity : BaseActivity() {
                 code = intent.data?.getQueryParameter("code")
             )
             viewModel.getAccessToken(accessRequest)
+            intent.data = null
         }
         super.onResume()
     }

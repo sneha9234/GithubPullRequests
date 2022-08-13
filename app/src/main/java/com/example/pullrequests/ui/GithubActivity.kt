@@ -40,26 +40,12 @@ class GithubActivity : BaseActivity(){
     }
 
     private fun hitApis() {
-        viewModel.getListofPullRequests("sneha9234","VTUcalc")
+        viewModel.fetchPullRequests()
     }
 
     private fun initObserver() {
-        viewModel.pullRequestsResponse.observe(this) { res ->
-            when (res) {
-                is ViewState.Data -> {
-                    res.data.let {
-
-                    }
-                    dismissLoading()
-                }
-                is ViewState.Error -> {
-                    showError(content = res.error)
-                    dismissLoading()
-                }
-                ViewState.Loading -> {
-                    showLoading()
-                }
-            }
+        viewModel.getListofPullRequests("sneha9234","VTUcalc").observe(this) {
+            githubReposAdapter.submitData(lifecycle, it)
         }
 
     }

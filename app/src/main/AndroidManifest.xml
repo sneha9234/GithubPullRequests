@@ -17,7 +17,9 @@
         android:theme="@style/Theme.PullRequests">
         <activity
             android:name="com.example.pullrequests.ui.MainActivity"
-            android:exported="true" >
+            android:exported="true"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -36,9 +38,9 @@
         </activity>
         <activity
             android:name="com.example.pullrequests.ui.GithubActivity"
-            android:configChanges="orientation|screenSize"
             android:exported="true"
-            android:screenOrientation="sensor"/>
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
 
     </application>
 

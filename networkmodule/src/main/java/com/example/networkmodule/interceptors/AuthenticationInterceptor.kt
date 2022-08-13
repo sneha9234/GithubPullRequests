@@ -42,7 +42,6 @@ open class AuthenticationInterceptor(
 
     open fun setAuthHeader(builder: Request.Builder, token: String?) {
         if (!token.isNullOrEmpty())
-//            builder.header("Authorization", String.format("Authorization", token)) // Sudesh changed this for working purpose
-            builder.header("Authorization","token $token")
+            builder.header("Authorization",token)
     }
 }

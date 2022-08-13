@@ -5,10 +5,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.pullrequests.databinding.RepoItemsBinding
 import com.example.pullrequests.model.GithubReposResponse
 
-
 class RepoItemsViewHolder(
     itemView: View,
-    val binding: RepoItemsBinding
+    private val binding: RepoItemsBinding
 ) : RecyclerView.ViewHolder(itemView) {
 
     fun bind(item: GithubReposResponse?) {
