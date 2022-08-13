@@ -72,7 +72,6 @@ class MainActivity : BaseActivity() {
             )
             viewModel.getAccessToken(accessRequest)
         }
-
         super.onResume()
     }
 
