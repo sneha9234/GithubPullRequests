@@ -1,14 +1,12 @@
 <resources>
-    <string name="app_name">Github Repos</string>
-    <string name="search">Search</string>
-    <string name="built_by">Built by</string>
-    <string name="author_name">%1$s / %2$s</string>
-    <string name="stars_today">%1s stars today</string>
+    <string name="app_name">Pull Requests</string>
     <string name="internet_available">Internet available</string>
     <string name="internet_unavailable">Internet not available</string>
     <string name="code">code</string>
-    <string name="to_get_the_pull_requests">To get the pull requests you first need to login to your Github account for authorization</string>
+    <string name="to_get_the_pull_requests">To get the pull requests you first need to login to your Github account for authorization\n\nRecommended default browser: Google Chrome</string>
     <string name="login_to_github">Login to Github</string>
     <string name="error">Error</string>
     <string name="ok">Ok</string>
+    <string name="created_at"><b>Created at:</b> %s</string>
+    <string name="closed_at"><b>Closed at:</b> %s</string>
 </resources>

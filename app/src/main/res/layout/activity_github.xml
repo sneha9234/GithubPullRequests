@@ -14,17 +14,20 @@
         android:layout_height="?attr/actionBarSize"
         android:background="?attr/colorPrimary"
         android:elevation="@dimen/margin_5dp"
+        app:titleTextColor="@color/white"
+        android:paddingStart="@dimen/margin_20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:menu="@menu/toolbar_menu"
-        app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+        tools:ignore="RtlSymmetry" />
 
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:paddingTop="@dimen/margin_10dp"
+            android:layout_marginTop="?attr/actionBarSize"
             android:layout_above="@+id/progress_circular"
             android:overScrollMode="never"
             tools:listitem="@layout/repo_items"
