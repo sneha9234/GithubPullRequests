@@ -12,9 +12,9 @@ interface GithubApiInterface {
     @GET
     suspend fun getPullRequests(
         @Url url: String,
-        @Query("state") state: String/*,
+        @Query("state") state: String,
         @Query("per_page") per_page: Int,
-        @Query("page") page: Int*/
+        @Query("page") page: Int
     ): Response<List<GithubReposResponse>>
 
     @POST(ACCESS_TOKEN_URL)

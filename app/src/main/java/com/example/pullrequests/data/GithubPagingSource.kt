@@ -20,9 +20,9 @@ class GithubPagingSource(private val service: GithubApiInterface, private val ow
 
             val response = RemoteSource.safeApiCall { service.getPullRequests(
                 urlManager.getPullRequestsUrl(owner, repo),
-                state = CLOSED/*,
+                state = CLOSED,
                 per_page = params.loadSize,
-                page = pageIndex*/
+                page = pageIndex
             ) }
 
 
@@ -33,7 +33,7 @@ class GithubPagingSource(private val service: GithubApiInterface, private val ow
                 is Result.Success -> {
 
                     val joined = mutableListOf<GithubReposResponse>()
-                  //  joined.addAll(response.data ?: emptyList())
+                    joined.addAll(response.data ?: emptyList())
 
 
                     val nextKey = if (joined.size < PAGE_SIZE) null else pageIndex + 1
