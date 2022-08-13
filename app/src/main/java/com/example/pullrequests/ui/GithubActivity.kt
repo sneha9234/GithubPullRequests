@@ -46,7 +46,7 @@ class GithubActivity : BaseActivity(){
     }
 
     private fun initObserver() {
-        viewModel.getListofPullRequests("sneha9234","VTUcalc").observe(this) {
+        viewModel.getListofPullRequests("sneha9234","GithubPullRequests").observe(this) {
             githubReposAdapter.submitData(lifecycle, it)
         }
 
