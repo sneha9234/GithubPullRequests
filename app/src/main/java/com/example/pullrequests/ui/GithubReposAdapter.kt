@@ -14,7 +14,9 @@ class GithubReposAdapter: PagingDataAdapter<GithubReposResponse, RepoItemsViewHo
 
     override fun onCreateViewHolder(parent: ViewGroup, p1: Int): RepoItemsViewHolder {
 
-        binding = RepoItemsBinding.inflate(LayoutInflater.from(parent.context))
+        binding = RepoItemsBinding.inflate(LayoutInflater.from(parent.context),
+            parent,
+            false)
         val view = binding.root
         return RepoItemsViewHolder(view, binding)
     }

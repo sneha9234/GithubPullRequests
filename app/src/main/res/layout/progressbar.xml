@@ -9,6 +9,7 @@
         android:id="@+id/pg_loader"
         android:layout_width="@dimen/margin_100dp"
         android:layout_height="@dimen/margin_100dp"
+        android:indeterminateTint="@color/white_70opacity"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
