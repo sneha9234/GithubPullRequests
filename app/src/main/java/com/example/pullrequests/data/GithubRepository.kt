@@ -5,19 +5,13 @@ import androidx.paging.PagingConfig
 import androidx.paging.liveData
 import com.example.pullrequests.model.AccessRequest
 import com.example.pullrequests.model.AccessTokenResponse
-import com.example.pullrequests.model.GithubReposResponse
 import com.example.networkmodule.core.RemoteSource
 import com.example.networkmodule.core.Result
-import com.example.networkmodule.wrapper.NetworkController
+import com.example.pullrequests.network.GithubApiInterface
+import javax.inject.Inject
 
 const val PAGE_SIZE = 10
-class GithubRepository {
-    private val githubApiInterface: GithubApiInterface by lazy {
-        NetworkController.getAPIClient().getApiService(
-            GithubApiInterface::class.java
-        ) as GithubApiInterface
-    }
-
+class GithubRepository @Inject constructor(private val apiService: GithubApiInterface) {
 
     fun pullRequests(owner:String, repo: String) = Pager(
         config = PagingConfig(
@@ -26,11 +20,11 @@ class GithubRepository {
             enablePlaceholders = false,
             initialLoadSize = PAGE_SIZE
         ),
-        pagingSourceFactory = { GithubPagingSource(githubApiInterface, owner, repo) }
+        pagingSourceFactory = { GithubPagingSource(apiService, owner, repo) }
     ).liveData
 
     suspend fun accessToken(request: AccessRequest): Result<AccessTokenResponse> {
-        return RemoteSource.safeApiCall { githubApiInterface.getAccessToken(request) }
+        return RemoteSource.safeApiCall { apiService.getAccessToken(request) }
     }
 
 

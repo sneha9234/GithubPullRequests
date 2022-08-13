@@ -11,7 +11,9 @@ import com.example.pullrequests.networkConnection.ConnectionLiveData
 import com.example.pullrequests.utils.CommonDialog
 import com.example.networkmodule.core.DEFAULT_ERROR_MESSAGE
 import com.google.android.material.snackbar.Snackbar
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 abstract class BaseActivity : AppCompatActivity() {
 
     private var alertDialog: Dialog? = null

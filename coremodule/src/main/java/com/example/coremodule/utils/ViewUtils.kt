@@ -13,11 +13,3 @@ inline fun View.debouncedOnClick(debounceTill: Long = 500, crossinline onClick: 
         }
     })
 }
-
-fun View.hide() {
-    visibility = View.GONE
-}
-
-fun View.show() {
-    visibility = View.VISIBLE
-}

@@ -1,26 +1,20 @@
 package com.example.pullrequests.viewmodel
 
-import android.app.Application
 import androidx.lifecycle.*
 import com.example.pullrequests.data.GithubRepository
-import com.example.pullrequests.data.UrlManager
-import com.example.pullrequests.model.GithubReposResponse
-import com.example.networkmodule.core.ViewState
-import kotlinx.coroutines.launch
-import com.example.networkmodule.core.Result
+import dagger.hilt.android.lifecycle.HiltViewModel
+import javax.inject.Inject
 
-class GithubViewModel (application: Application) : AndroidViewModel(application) {
-
-    private val repos by lazy { GithubRepository() }
+@HiltViewModel
+class GithubViewModel @Inject constructor(private val repository: GithubRepository) : ViewModel(){
 
     private val _fetchData = MutableLiveData<Boolean>()
     fun getListofPullRequests(owner:String, repo:String) = _fetchData.switchMap {
-        repos.pullRequests(owner, repo)
+            repository.pullRequests(owner, repo)
     }
 
     fun fetchPullRequests(){
         _fetchData.postValue(true)
     }
-
 
 }
