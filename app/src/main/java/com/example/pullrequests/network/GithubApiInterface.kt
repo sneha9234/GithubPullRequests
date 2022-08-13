@@ -1,4 +1,4 @@
-package com.example.pullrequests.data
+package com.example.pullrequests.network
 
 import com.example.pullrequests.model.AccessRequest
 import com.example.pullrequests.model.AccessTokenResponse

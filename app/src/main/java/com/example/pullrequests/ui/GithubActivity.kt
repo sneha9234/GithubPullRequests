@@ -8,7 +8,9 @@ import com.example.pullrequests.basefiles.BaseActivity
 import com.example.pullrequests.databinding.ActivityGithubBinding
 import com.example.pullrequests.viewmodel.GithubViewModel
 import com.example.networkmodule.core.ViewState
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class GithubActivity : BaseActivity(){
     private var _binding: ActivityGithubBinding? = null
     private val binding get() = _binding!!
@@ -44,7 +46,7 @@ class GithubActivity : BaseActivity(){
     }
 
     private fun initObserver() {
-        viewModel.getListofPullRequests("sneha9234","VTUcalc").observe(this) {
+        viewModel.getListofPullRequests("sneha9234","GithubPullRequests").observe(this) {
             githubReposAdapter.submitData(lifecycle, it)
         }
 

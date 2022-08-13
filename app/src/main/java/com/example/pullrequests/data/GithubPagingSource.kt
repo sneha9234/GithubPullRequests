@@ -7,6 +7,7 @@ import com.example.pullrequests.utils.GithubConstants.Companion.CLOSED
 import com.example.networkmodule.core.DEFAULT_ERROR_MESSAGE
 import com.example.networkmodule.core.RemoteSource
 import com.example.networkmodule.core.Result
+import com.example.pullrequests.network.GithubApiInterface
 
 private const val STARTING_PAGE_INDEX = 1
 

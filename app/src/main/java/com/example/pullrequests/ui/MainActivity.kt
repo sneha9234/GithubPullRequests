@@ -14,7 +14,9 @@ import com.example.pullrequests.utils.GithubConstants
 import com.example.pullrequests.viewmodel.MainActivityViewModel
 import com.example.networkmodule.core.ViewState
 import com.example.pullrequests.databinding.ActivityMainBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : BaseActivity() {
 
     private var _binding: ActivityMainBinding? = null
